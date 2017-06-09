@@ -1,0 +1,25 @@
+.collapsible {
+    margin: 0;
+    width: 600px;
+}
+
+.collapsible-header i {
+    margin: 0 1rem;
+}
+
+.collapsible-body {
+    padding: 1rem;
+}
+
+.item-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.item-wrapper > .column {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录 | HostelWorld</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection"/>
+    <link rel="stylesheet" href="../css/common.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<div id="content">
+    <div id="form-container">
+        <div class="card hoverable" id="form-wrapper">
+            <div class="card-content">
+                <div class="input-field">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="name" type="text" class="validate">
+                    <label for="name">账户名</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">lock_outline</i>
+                    <input id="password" type="password" class="validate">
+                    <label for="password">密  码</label>
+                </div>
+            </div>
+            <div class="card-action">
+                <a class="waves-effect waves-teal btn-flat black-text" id="register">注 册</a>
+                <button class="btn waves-effect waves-light" id="login">登 录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script src="../js/login.js"></script>
+</body>
+</html>

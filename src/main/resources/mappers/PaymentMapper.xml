@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nju.mapper.PaymentMapper">
+    <update id="add">
+        INSERT INTO payment(hostelID, date, amount)
+        VALUES (#{0}, #{1}, #{2})
+    </update>
+
+    <update id="pay">
+        UPDATE payment
+        SET amount = 0.0
+        WHERE hostelID = #{0}
+    </update>
+
+    <update id="payAll">
+        UPDATE payment
+        SET amount = 0.0
+        WHERE amount != 0.0
+    </update>
+
+    <select id="getAllPayment" resultType="cn.edu.nju.model.Payment">
+        SELECT *
+        FROM payment WHERE amount != 0.0
+    </select>
+
+    <select id="getPaymentByHostel" resultType="cn.edu.nju.model.Payment">
+        SELECT *
+        FROM payment
+        WHERE hostelID = #{0} AND amount != 0.0
+    </select>
+</mapper>

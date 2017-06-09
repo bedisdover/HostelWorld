@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hostel List | HostelWorld</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection"/>
+    <link rel="stylesheet" href="../css/common.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="../img/icon.png" sizes="32×32">
+</head>
+<body>
+<ul id="slide-out" class="side-nav fixed">
+    <li>
+        <div id="icon">
+            <img src="../img/icon-100×100.png" alt="HostelWorld" sizes="32*32">
+        </div>
+    </li>
+    <li class="active"><a href="javascript:void(0)">预 订</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li>
+        <a class="subheader">我 的</a>
+    </li>
+    <li><a href="account.html">账 户</a></li>
+    <li><a href="history.html">历 史</a></li>
+</ul>
+
+<!--填充块-->
+<div id="side-filling"></div>
+
+<div id="content">
+    <div id="hostel-list"></div>
+</div>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script type="text/javascript" src="../js/room.js"></script>
+<script type="text/javascript" src="../js/hostelList.js"></script>
+</body>
+</html>

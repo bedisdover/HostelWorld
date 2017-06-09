@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nju.mapper.PlanMapper">
+    <insert id="publishPlan">
+        INSERT INTO plan (hostelID, startDate, endDate, single, normal, singlePrice, normalPrice)
+        VALUES (#{hostelID}, #{startDate}, #{endDate}, #{single}, #{normal}, #{singlePrice}, #{normalPrice})
+    </insert>
+
+    <update id="minusSingle">
+        UPDATE plan
+        SET single = single - 1
+        WHERE hostelID = #{hostelID}
+              AND DATEDIFF(#{startDate}, startDate) >= 0
+              AND DATEDIFF(endDate, #{endDate}) >= 0
+    </update>
+
+    <update id="minusNormal">
+        UPDATE plan
+        SET normal = normal - 1
+        WHERE hostelID = #{hostelID}
+              AND DATEDIFF(#{startDate}, startDate) >= 0
+              AND DATEDIFF(endDate, #{endDate}) >= 0
+    </update>
+
+    <select id="hasPlan" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM plan
+        WHERE hostelID = #{0}
+              AND DATEDIFF(#{1}, startDate) > 0
+              AND DATEDIFF(endDate, #{2}) > 0
+    </select>
+
+    <select id="getAllHostel" resultType="cn.edu.nju.model.Hostel">
+        SELECT DISTINCT *
+        FROM hostel
+        WHERE hostelID IN
+              (SELECT hostelID
+               FROM plan)
+    </select>
+
+    <select id="getAvailableHostel" resultType="cn.edu.nju.model.Hostel">
+        SELECT *
+        FROM hostel
+        WHERE hostelID IN
+              (SELECT hostelID
+               FROM plan
+               WHERE single > 0 OR normal > 0)
+    </select>
+
+    <select id="getAvailableRoom" resultType="cn.edu.nju.model.Room">
+        SELECT *
+        FROM plan
+        WHERE hostelID = #{0}
+              AND DATEDIFF(endDate, CURDATE()) > 0
+        ORDER BY startDate
+        LIMIT 1
+    </select>
+
+    <select id="getAvailableRoomByDate" resultType="cn.edu.nju.model.Room">
+        SELECT *
+        FROM plan
+        WHERE hostelID = #{0}
+              AND DATEDIFF(#{1}, startDate) >= 0
+              AND DATEDIFF(endDate, #{2}) >= 0
+    </select>
+
+    <select id="getAllPlan" resultType="cn.edu.nju.model.RoomPlan">
+        SELECT *
+        FROM plan
+        WHERE hostelID = #{0}
+    </select>
+    <select id="getPlanNum" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM plan
+    </select>
+</mapper>

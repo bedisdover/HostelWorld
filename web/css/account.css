@@ -1,0 +1,23 @@
+
+#info-wrapper {
+    display: flex;
+    /*height: 100%;*/
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+}
+
+#info-wrapper > div {
+    width: 40%;
+    margin: 20px 0;
+}
+
+#info-wrapper > div:last-child {
+    width: 100%;
+}
+
+#info-wrapper > div input {
+    display: inline;
+    width: 80%;
+}

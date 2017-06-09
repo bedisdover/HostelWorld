@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账户 | HostelWorld</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection"/>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/account.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="../img/icon.png" sizes="32×32">
+</head>
+<body>
+<ul id="slide-out" class="side-nav fixed">
+    <li>
+        <div id="icon">
+            <img src="../img/icon-100×100.png" alt="HostelWorld" sizes="32*32">
+        </div>
+    </li>
+    <li><a href="hostel-list.html">预 订</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li>
+        <a class="subheader">我 的</a>
+    </li>
+    <li class="active"><a href="javascript: void(0)">账 户</a></li>
+    <li><a href="history.html">历 史</a></li>
+</ul>
+
+<!--填充块-->
+<div id="side-filling"></div>
+
+<div id="content">
+    <div id="form-container">
+        <div class="card hoverable" id="info-wrapper">
+            <div>姓名： <span id="name">---</span></div>
+            <div>会员卡号： <span id="cardNum">---</span></div>
+            <div>银行卡号： <span id="bankCard">---</span></div>
+            <div>电话号：<span id="phoneNum">---</span></div>
+            <div>卡类型：<span id="rate">---</span></div>
+            <div>消费总额：<span id="sum">---</span></div>
+            <div>折扣：<span id="discount">---</span></div>
+            <div>余额：<span id="balance">---</span></div>
+            <div>
+                <button class="btn" id="edit">编 辑</button>
+                <button class="btn hide" id="confirm">确 认</button>
+                <a class="btn waves-effect waves-effect" href="#recharge-modal">充 值</a>
+            </div>
+            <div id="recharge-modal" class="modal" style="width: 30%; left: 30%;">
+                <div class="modal-content">
+                    <div class="input-field">
+                        <input type="text" id="recharge-amount">
+                        <label for="recharge-amount"></label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn modal-action modal-close">充 值</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script type="text/javascript" src="../js/user.js"></script>
+<script type="text/javascript" src="../js/account.js"></script>
+</html>

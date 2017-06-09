@@ -1,0 +1,27 @@
+{
+	"title": "HostelWorld文档",
+	"description": "HostelWorld，J2EE大作业",
+	"author": "bedisdover",
+	"language" : "zh-hans",
+	"links": {
+		"sidebar": {
+		}
+	},
+	"plugins": [
+		"toggle-chapters",
+		"splitter",
+		"prism",
+		"disqus",
+		"tbfed-pagefooter"
+	],
+	"pluginsConfig": {
+		"tbfed-pagefooter": {
+			"copyright": "Copyright &copy; bedisdover 2016",
+			"modify_label": "File modified:",
+			"modify_format": "YYYY-MM-DD HH:mm"
+		},
+		"disqus": {
+			"shortName": ""
+		}
+	}
+}

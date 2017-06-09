@@ -1,0 +1,53 @@
+#check-tabs {
+    margin: 0;
+    width: 800px;
+}
+
+.card {
+    margin: 0;
+    padding: 40px 0;
+}
+
+.box {
+    display: flex;
+    width: 800px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box > .input-field {
+    width: 300px;
+    display: block;
+}
+
+table {
+    width: 600px;
+}
+
+#plan-container {
+    width: 800px;
+    padding: 20px 0;
+}
+
+#plan > table {
+    width: 100%;
+    padding: 0 20px;
+}
+
+#account {
+    width: 600px;
+    padding: 0 40px;
+}
+
+#account > div {
+    margin: 20px auto;
+}
+
+#statistics-container {
+    width: 800px;
+    padding: 0;
+}
+
+#statistics-container table {
+    width: 100%;
+}

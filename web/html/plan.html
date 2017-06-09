@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旅店 | HostelWorld</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection"/>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/hostel.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="../img/icon.png" sizes="32×32">
+</head>
+<body>
+<ul id="slide-out" class="side-nav fixed">
+    <li>
+        <div id="icon">
+            <img src="../img/icon-100×100.png" alt="HostelWorld" sizes="32*32">
+        </div>
+    </li>
+    <li><a href="hostel.html">入 住</a></li>
+    <li><a href="checkout.html">离 店</a></li>
+    <li class="active"><a href="javascript: void(0)">计 划</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li>
+        <a class="subheader">我 的</a>
+    </li>
+    <li><a href="account-hostel.html">账 户</a></li>
+    <li><a href="statistics-hostel.html">统 计</a></li>
+</ul>
+
+<!--填充块-->
+<div id="side-filling"></div>
+
+<div id="content">
+    <div id="form-container">
+        <div class="card hoverable" id="plan-container">
+            <ul id="check-tabs" class="tabs tabs-fixed-width">
+                <li class="tab col s3"><a href="#plan">所有计划</a></li>
+                <li class="tab col s3"><a href="#publish-plan">发布计划</a></li>
+            </ul>
+            <div class="row" id="publish-plan">
+                <div class="input-field col s4 offset-s1">
+                    <input id="startDate" type="date" class="datepicker">
+                    <label for="startDate">开始日期</label>
+                </div>
+                <div class="input-field col s4 offset-s2">
+                    <input id="endDate" type="date" class="datepicker">
+                    <label for="endDate">结束日期</label>
+                </div>
+                <div class="input-field col s4 offset-s1">
+                    <input id="single" type="text">
+                    <label for="single">单间数量</label>
+                </div>
+                <div class="input-field col s4 offset-s2">
+                    <input id="singlePrice" type="text">
+                    <label for="singlePrice">单间价格</label>
+                </div>
+                <div class="input-field col s4 offset-s1">
+                    <input id="normal" type="text">
+                    <label for="normal">标准间数量</label>
+                </div>
+                <div class="input-field col s4 offset-s2">
+                    <input id="normalPrice" type="text">
+                    <label for="normalPrice">标准间价格</label>
+                </div>
+                <div class="center-align">
+                    <button class="btn waves-effect waves-light" id="confirm">确 定</button>
+                </div>
+            </div>
+            <div id="plan">
+                <table class="bordered highlight centered">
+                    <thead>
+                    <tr>
+                        <th>序 号</th>
+                        <th>开始时间</th>
+                        <th>结束时间</th>
+                        <th>单间数量</th>
+                        <th>单间价格</th>
+                        <th>标间数量</th>
+                        <th>标间价格</th>
+                    </tr>
+                    </thead>
+                    <tbody id="planList">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/plan.js"></script>
+</body>
+</html>

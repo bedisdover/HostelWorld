@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nju.mapper.CheckInMapper">
+    <insert id="checkIn">
+        INSERT INTO check_in (cardNum, hostelID, name, roomID, startDate, endDate, type, orderID, discount, price, money)
+        VALUES
+            (#{cardNum}, #{hostelID}, #{name}, #{roomID}, #{startDate}, #{endDate}, #{type}, #{orderID}, #{discount},
+                         #{price}, #{money})
+    </insert>
+
+    <update id="checkOut">
+        UPDATE check_in
+        SET payType = #{1}, endDate = CURDATE(), finish = TRUE
+        WHERE id = #{0}
+    </update>
+
+    <select id="getAllCheckInByHostel" resultType="cn.edu.nju.model.CheckIn">
+        SELECT *
+        FROM check_in
+        WHERE hostelID = #{0}
+    </select>
+
+    <select id="getCurrentCheckInByHostel" resultType="cn.edu.nju.model.CheckIn">
+        SELECT *
+        FROM check_in
+        WHERE hostelID = #{0} AND finish = FALSE
+    </select>
+
+    <select id="getCheckInByID" resultType="cn.edu.nju.model.CheckIn">
+        SELECT *
+        FROM check_in
+        WHERE id = #{0}
+    </select>
+
+    <select id="getAllCheckInByUser" resultType="cn.edu.nju.model.CheckIn">
+        SELECT *
+        FROM check_in
+        WHERE cardNum = #{0}
+    </select>
+
+    <select id="getUserCheckIn" resultType="cn.edu.nju.model.CheckIn">
+        SELECT *
+        FROM check_in
+        WHERE cardNum = #{0}
+    </select>
+</mapper>

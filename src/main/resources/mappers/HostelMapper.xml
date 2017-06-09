@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nju.mapper.HostelMapper">
+    <select id="isHostelExisted" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM hostel
+        WHERE name = #{0} AND address = #{1}
+    </select>
+
+    <select id="getLastID" resultType="java.lang.String">
+        SELECT MAX(hostelID)
+        FROM hostel
+    </select>
+
+    <insert id="createHostel">
+        INSERT INTO hostel (hostelID, name, address, password)
+        VALUES (#{hostelID}, #{name}, #{address}, #{password})
+    </insert>
+
+    <select id="getHostelByID" resultType="cn.edu.nju.model.Hostel">
+        SELECT *
+        FROM hostel
+        WHERE hostelID = #{hostelID}
+    </select>
+
+    <select id="isActive" resultType="java.lang.Boolean">
+        SELECT active
+        FROM hostel
+        WHERE hostelID = #{0}
+    </select>
+
+    <select id="getHostelNum" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM hostel
+    </select>
+
+    <update id="updateHostel">
+        UPDATE hostel
+        SET
+            hostelID = #{hostelID},
+            name     = #{name},
+            address  = #{address},
+            password = #{password}
+        WHERE id = #{id}
+    </update>
+
+    <update id="activateHostel">
+        UPDATE hostel
+        SET active = TRUE
+        WHERE hostelID = #{0}
+    </update>
+</mapper>

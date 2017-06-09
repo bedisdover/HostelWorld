@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预订 | HostelWorld</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../css/common.css">
+    <link type="text/css" rel="stylesheet" href="../css/order.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="../img/icon.png" sizes="32×32">
+</head>
+<body>
+<ul id="slide-out" class="side-nav fixed">
+    <li>
+        <div id="icon">
+            <img src="../img/icon-100×100.png" alt="HostelWorld" sizes="32*32">
+        </div>
+    </li>
+    <li><a href="hostel-list.html">预 订</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li>
+        <a class="subheader">我 的</a>
+    </li>
+    <li><a href="account.html">账 户</a></li>
+    <li><a href="history.html">历 史</a></li>
+</ul>
+
+<!--填充块-->
+<div id="side-filling"></div>
+
+<div id="content">
+    <div class="carousel">
+        <a class="carousel-item" href="#"><img src="../img/hostel/img/img_h000001_1.jpg"></a>
+        <a class="carousel-item" href="#"><img src="../img/hostel/img/img_h000001_2.jpg"></a>
+        <a class="carousel-item" href="#"><img src="../img/hostel/img/img_h000001_3.jpg"></a>
+        <a class="carousel-item" href="#"><img src="../img/hostel/img/img_h000001_4.jpg"></a>
+        <a class="carousel-item" href="#"><img src="../img/hostel/img/img_h000001_5.jpg"></a>
+    </div>
+    <div id="date-wrapper">
+        <div class="card hoverable">
+            <div class="input-field">
+                <i class="material-icons prefix">date_range</i>
+                <input id="startDate" type="date" class="datepicker">
+                <label for="startDate">开始日期</label>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">date_range</i>
+                <input id="endDate" type="date" class="datepicker">
+                <label for="endDate" data-error="123">结束日期</label>
+            </div>
+            <div class="center">
+                <button class="btn waves-effect waves-light" id="search">查 询</button>
+            </div>
+        </div>
+        <div class="card hoverable">
+            <table class="bordered highlight centered">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>剩余数量</th>
+                    <th>价格</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>单间</td>
+                    <td id="single">---</td>
+                    <td id="singlePrice">---</td>
+                    <td>
+                        <a class="btn waves-effect waves-light right disabled" id="order-single">预 订</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>标准间</td>
+                    <td id="normal">---</td>
+                    <td id="normalPrice">---</td>
+                    <td>
+                        <a class="btn waves-effect waves-light right disabled" id="order-normal">预 订</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--预订单间时显示-->
+        <div class="modal">
+            <div class="modal-content">
+                <h4>预订成功</h4>
+                <p>订单号： &nbsp;&nbsp;&nbsp;&nbsp;<span id="orderID">---</span></p>
+                <p>总额： &nbsp;&nbsp;&nbsp;&nbsp;<span id="amount">---</span> &nbsp;&nbsp;元</p>
+                <p><span id="order-date">---</span>前可取消订单</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">好 的</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/user.js"></script>
+<script type="text/javascript" src="../js/room.js"></script>
+<script type="text/javascript" src="../js/order.js"></script>
+</body>
+</html>

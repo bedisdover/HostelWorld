@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旅店 | HostelWorld</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection"/>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/hostel.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="../img/icon.png" sizes="32×32">
+</head>
+<body>
+<ul id="slide-out" class="side-nav fixed">
+    <li>
+        <div id="icon">
+            <img src="../img/icon-100×100.png" alt="HostelWorld" sizes="32*32">
+        </div>
+    </li>
+    <li><a href="hostel.html">入 住</a></li>
+    <li><a href="checkout.html">离 店</a></li>
+    <li><a href="plan.html">计 划</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li>
+        <a class="subheader">我 的</a>
+    </li>
+    <li class="active"><a href="javascript: void(0)">账 户</a></li>
+    <li><a href="statistics-hostel.html">统 计</a></li>
+</ul>
+
+<!--填充块-->
+<div id="side-filling"></div>
+
+<div id="content">
+    <div id="form-container">
+        <div class="card hoverable">
+            <div id="account">
+                <div>店名： <span id="name">---</span></div>
+                <div>地址： <span id="address">---</span></div>
+                <div>
+                    <button class="btn" id="edit">编 辑</button>
+                    <button class="btn hide" id="confirm">确 认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/hostelAccount.js"></script>
+</body>
+</html>

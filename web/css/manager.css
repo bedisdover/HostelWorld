@@ -1,0 +1,26 @@
+
+#application-tabs {
+    margin: 0;
+    width: 800px;
+}
+
+table {
+    width: 100%;
+}
+
+#payment {
+    width: 800px;
+    padding: 0;
+}
+
+#statistics {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#statistics > div {
+    width: 30%;
+    padding: 30px 20px;
+}

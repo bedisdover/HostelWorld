@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nju.mapper.ApplicationMapper">
+
+    <insert id="applyForOpen">
+        INSERT INTO application_open (hostelID, name, address)
+        VALUES (#{0}, #{1}, #{2})
+    </insert>
+
+    <insert id="applyForModify">
+        INSERT INTO application_modify (hostelID, name_before, address_before, name_after, address_after)
+        VALUES (#{0}, #{1}, #{2}, #{3}, #{4})
+    </insert>
+
+    <select id="getOpenApplication" resultType="cn.edu.nju.model.OpenApplication">
+        SELECT *
+        FROM application_open
+        WHERE hostelID = #{0}
+    </select>
+
+    <select id="getModifyApplication" resultType="cn.edu.nju.model.ModifyApplication">
+        SELECT *
+        FROM application_modify
+        WHERE hostelID = #{0}
+    </select>
+
+    <update id="approveOpen">
+        UPDATE application_open
+        SET pass = #{1}, notes = #{2}
+        WHERE hostelID = #{0}
+    </update>
+
+    <update id="approveModify">
+        UPDATE application_modify
+        SET pass = #{1}, notes = #{2}
+        WHERE id = #{0}
+    </update>
+
+    <update id="approveOpenBatch">
+        UPDATE application_open
+        SET pass = #{1}
+        WHERE id IN
+        <foreach collection="id" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
+
+    <update id="approveModifyBatch">
+        UPDATE application_open
+        SET pass = #{1}
+        WHERE id IN
+        <foreach collection="id" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
+
+    <select id="getOpenApplicationList" resultType="cn.edu.nju.model.OpenApplication">
+        SELECT *
+        FROM application_open
+        WHERE pass = 'waiting'
+    </select>
+
+    <select id="getModifyApplicationList" resultType="cn.edu.nju.model.ModifyApplication">
+        SELECT *
+        FROM application_modify
+        WHERE pass = 'waiting'
+    </select>
+</mapper>

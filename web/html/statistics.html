@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>经理 | HostelWorld</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection"/>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/manager.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="../img/icon.png" sizes="32×32">
+</head>
+<body>
+<ul id="slide-out" class="side-nav fixed">
+    <li>
+        <div id="icon">
+            <img src="../img/icon-100×100.png" alt="HostelWorld" sizes="32*32">
+        </div>
+    </li>
+    <li><a href="manager.html">申 请</a></li>
+    <li><a href="payment.html">结 算</a></li>
+    <li class="active"><a href="javascript: void(0)">统 计</a></li>
+</ul>
+
+<!--填充块-->
+<div id="side-filling"></div>
+
+<div id="content">
+    <div id="form-container">
+        <div id="statistics">
+            <div class="card">
+                <div class="card-title center-align">
+                    会 员
+                </div>
+                <div class="card-content">
+                    <p>
+                        数 量： <span id="userNum"> --- </span>
+                    </p>
+                    <p>
+                        总消费： <span id="userConsume"> --- </span>
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title center-align">
+                    旅 店
+                </div>
+                <div class="card-content">
+                    <p>
+                        数 量： <span id="hostelNum"> --- </span>
+                    </p>
+                    <p>
+                        计划数： <span id="planNum"> --- </span>
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title center-align">
+                    订 单
+                </div>
+                <div class="card-content">
+                    <p>
+                        数 量： <span id="orderNum"> --- </span>
+                    </p>
+                    <p>
+                        总 额： <span id="orderSum"> --- </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/statistics.js"></script>
+</body>
+</html>
