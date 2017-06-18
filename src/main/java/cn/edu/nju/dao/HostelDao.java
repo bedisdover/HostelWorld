@@ -5,6 +5,7 @@ import cn.edu.nju.model.Hostel;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by song on 17-3-8.
@@ -62,6 +63,10 @@ public class HostelDao {
      */
     public Hostel getHostelByID(String hostelID) {
         return hostelMapper.getHostelByID(hostelID);
+    }
+
+    public List<Hostel> getAllHostel() {
+        return hostelMapper.getAllHostel();
     }
 
     /**

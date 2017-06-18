@@ -58,6 +58,10 @@ public class ManagerService {
         }
     }
 
+    public MsgInfo getAllHostel() {
+        return new MsgInfo(true, "", hostelDao.getAllHostel());
+    }
+
     public MsgInfo getAllApplication() {
         Map<String, Object> application = new HashMap<>();
 

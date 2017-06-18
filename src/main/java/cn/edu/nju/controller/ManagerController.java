@@ -60,6 +60,15 @@ public class ManagerController {
     }
 
     /**
+     * 获取所有客栈信息，包括申请开店的客栈
+     */
+    @RequestMapping("/hostel")
+    @ResponseBody
+    public MsgInfo getAllHostel() {
+        return managerService.getAllHostel();
+    }
+
+    /**
      * 获取 开店/修改信息 请求
      */
     @RequestMapping("/application")

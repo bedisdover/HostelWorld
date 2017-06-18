@@ -6,6 +6,7 @@ import cn.edu.nju.model.OpenApplication;
 import cn.edu.nju.model.RoomPlan;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by song on 17-3-8.
@@ -29,4 +30,6 @@ public interface HostelMapper {
     int updateHostel(Hostel hostel);
 
     int getHostelNum();
+
+    List<Hostel> getAllHostel();
 }
