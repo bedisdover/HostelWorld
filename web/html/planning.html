@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>旅店 | HostelWorld</title>
     <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection"/>
     <link rel="stylesheet" href="../css/common.css">
@@ -66,14 +66,13 @@
 
 <script src="../js/echarts.min.js"></script>
 <script type="text/javascript">
-    // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('user-percent'));
 
     // Generate data
     var category = [];
     var dottedBase = +new Date();
-    var lineData = [100, 200, 300, 200, 100, 100, 100, 100, 200, 300, 100, 200, 300, 200, 100, 100, 100, 100, 200, 300, 200, 100, 100, 100, 100, 200, 300, 200, 100, 100];
-    var barData = [100, 200, 300, 200, 100, 100, 100, 100, 200, 300, 100, 200, 300, 200, 100, 100, 100, 100, 200, 300, 200, 100, 100, 100, 100, 200, 300, 200, 100, 100];
+    var lineData = [378, 379, 235, 313, 278, 399, 374, 231, 210, 358, 202, 326, 242, 247, 253, 313, 343, 291, 269, 387, 238, 340, 319, 333, 254, 201, 381, 222, 397, 273];
+    var barData = [136, 151, 111, 102, 126, 138, 164, 104, 169, 115, 150, 191, 132, 160, 176, 189, 104, 179, 196, 164, 183, 108, 170, 129, 128, 173, 122, 199, 100, 103];
 
     for (var i = 0; i < 30; i++) {
         var date = new Date(dottedBase -= 1000 * 3600 * 24 * 7);
@@ -91,7 +90,7 @@
             trigger: 'axis'
         },
         legend: {
-            data: ['会员占比', '入住人数']
+            data: ['会员', '非会员']
         },
         xAxis: {
             data: category
@@ -100,29 +99,15 @@
             splitLine: {show: false}
         },
         series: [{
-            name: '会员占比',
-            type: 'line',
-            smooth: true,
-            showAllSymbol: true,
-            symbol: 'emptyCircle',
-            symbolSize: 15,
+            name: '会员',
+            type: 'bar',
+            stack: 'test',
             data: lineData
         }, {
-            name: '入住人数',
+            name: '非会员',
             type: 'bar',
+            stack: 'test',
             barWidth: 10,
-            itemStyle: {
-                normal: {
-                    barBorderRadius: 5,
-                    color: new echarts.graphic.LinearGradient(
-                        0, 0, 0, 1,
-                        [
-                            {offset: 0, color: '#14c8d4'},
-                            {offset: 1, color: '#43eec6'}
-                        ]
-                    )
-                }
-            },
             data: barData
         }]
     };
