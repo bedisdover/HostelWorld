@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旅店 | HostelWorld</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection"/>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/hostel.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="../img/icon.png" sizes="32×32">
+</head>
+<body>
+<ul id="slide-out" class="side-nav fixed">
+    <li>
+        <div id="icon">
+            <img src="../img/icon-100×100.png" alt="HostelWorld" sizes="32*32">
+        </div>
+    </li>
+    <li><a href="hostel.html">入 住</a></li>
+    <li><a href="checkout.html">离 店</a></li>
+    <li><a href="plan.html">计 划</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li>
+        <a class="subheader">我 的</a>
+    </li>
+    <li><a href="account-hostel.html">账 户</a></li>
+    <li><a href="statistics-hostel.html">统 计</a></li>
+    <li class="active"><a href="javascript: void(0)">规 划</a></li>
+</ul>
+
+<!--填充块-->
+<div id="side-filling"></div>
+
+<div style="margin-left: 300px">
+    <div class="chart-container">
+        <div class="chart-header">
+            入住率
+        </div>
+        <div class="chart-body">
+
+        </div>
+    </div>
+
+    <div class="chart-container" style="border-top-color: #3c8dbc;">
+        <div class="chart-header">
+            收 入
+        </div>
+        <div class="chart-body"></div>
+    </div>
+
+    <div class="chart-container" style="border-top-color: #dd4b39;">
+        <div class="chart-header">
+            会员占比
+        </div>
+        <div class="chart-body">
+            <div id="user-percent"></div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/echarts.min.js"></script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('user-percent'));
+
+    // Generate data
+    var category = [];
+    var dottedBase = +new Date();
+    var lineData = [100, 200, 300, 200, 100, 100, 100, 100, 200, 300, 100, 200, 300, 200, 100, 100, 100, 100, 200, 300, 200, 100, 100, 100, 100, 200, 300, 200, 100, 100];
+    var barData = [100, 200, 300, 200, 100, 100, 100, 100, 200, 300, 100, 200, 300, 200, 100, 100, 100, 100, 200, 300, 200, 100, 100, 100, 100, 200, 300, 200, 100, 100];
+
+    for (var i = 0; i < 30; i++) {
+        var date = new Date(dottedBase -= 1000 * 3600 * 24 * 7);
+        category.unshift([
+            date.getFullYear(),
+            date.getMonth() + 1,
+            date.getDate()
+        ].join('-'));
+    }
+
+    // option
+    var option = {
+        backgroundColor: '#ffffff',
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data: ['会员占比', '入住人数']
+        },
+        xAxis: {
+            data: category
+        },
+        yAxis: {
+            splitLine: {show: false}
+        },
+        series: [{
+            name: '会员占比',
+            type: 'line',
+            smooth: true,
+            showAllSymbol: true,
+            symbol: 'emptyCircle',
+            symbolSize: 15,
+            data: lineData
+        }, {
+            name: '入住人数',
+            type: 'bar',
+            barWidth: 10,
+            itemStyle: {
+                normal: {
+                    barBorderRadius: 5,
+                    color: new echarts.graphic.LinearGradient(
+                        0, 0, 0, 1,
+                        [
+                            {offset: 0, color: '#14c8d4'},
+                            {offset: 1, color: '#43eec6'}
+                        ]
+                    )
+                }
+            },
+            data: barData
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+</html>

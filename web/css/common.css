@@ -72,3 +72,29 @@ html, body {
 button#login, button#register {
     margin-left: 80px;
 }
+
+.chart-container {
+    background: white;
+    margin: 30px;
+    border-top: 3px solid #00a65a;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.chart-header {
+    color: #444;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    position: relative;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.chart-body {
+    border-radius: 0 0 3px 3px;
+    padding: 10px;
+}
+
+.chart-body > div {
+    height: 400px;
+}
