@@ -34,6 +34,11 @@
         FROM hostel
     </select>
 
+    <select id="getAllHostel" resultType="cn.edu.nju.model.Hostel">
+        SELECT *
+        FROM hostel;
+    </select>
+
     <update id="updateHostel">
         UPDATE hostel
         SET
